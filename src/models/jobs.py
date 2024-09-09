@@ -521,7 +521,7 @@ class Job:
         detail = "Import des données vers InfluxDB"
         usage_point_id = self.usage_point_config.usage_point_id
         title(f"[{usage_point_id}] {detail}")
-        if APP_CONFIG.mqtt.enable:
+        if APP_CONFIG.influxdb.enable:
             ExportInfluxDB(usage_point_id)
         else:
             title("Désactivé dans la configuration (Exemple: https://tinyurl.com/2kbd62s9)")
